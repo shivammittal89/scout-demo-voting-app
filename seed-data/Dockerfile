@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.9-slim@sha256:86d569ea8a3e1ebd34f21987ff0d187a8eaf5a8cc47803e1e69e1fb83ff987b2
 
 # add apache bench (ab) tool
 RUN apt-get update \
