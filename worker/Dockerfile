@@ -25,7 +25,7 @@ RUN case ${TARGETPLATFORM} in \
 
 
 # app image
-FROM mcr.microsoft.com/dotnet/runtime:7.0
+FROM mcr.microsoft.com/dotnet/runtime:7.0@sha256:709d5795be92db33931ef7485aa9b07ad5854734229276cb464a2ee392131c78
 WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "Worker.dll"]
