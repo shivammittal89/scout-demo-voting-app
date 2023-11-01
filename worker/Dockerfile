@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} mcr.microsoft.com/dotnet/sdk:7.0 as build
+FROM --platform=${BUILDPLATFORM} mcr.microsoft.com/dotnet/sdk:7.0@sha256:7776f4a8f9f4a809374c44f1214d49b22975cdf47a9ef44acf87fec8b0216e95 as build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
@@ -25,7 +25,7 @@ RUN case ${TARGETPLATFORM} in \
 
 
 # app image
-FROM mcr.microsoft.com/dotnet/runtime:7.0
+FROM mcr.microsoft.com/dotnet/runtime:7.0@sha256:709d5795be92db33931ef7485aa9b07ad5854734229276cb464a2ee392131c78
 WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "Worker.dll"]
