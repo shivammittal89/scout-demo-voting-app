@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:20-slim@sha256:da981564279232f7962576d79d01832cc12f8270e8ddd05bb3077af8061a50ca
 
 # add curl for healthcheck
 RUN apt-get update \
